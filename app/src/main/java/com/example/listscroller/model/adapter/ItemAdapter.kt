@@ -1,8 +1,11 @@
 package com.example.listscroller.model.adapter
 
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listscroller.DetailsItem
@@ -16,6 +19,7 @@ class ItemAdapter(
     :RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     inner class ItemViewHolder(view:View):RecyclerView.ViewHolder(view),View.OnClickListener{
         val textView: TextView = view.findViewById(R.id.item_title)
+        val imageView: ImageView? =view.findViewById(R.id.image)
 
 
 
@@ -31,6 +35,7 @@ class ItemAdapter(
         }
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false)
@@ -44,6 +49,7 @@ class ItemAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.textView.text = dataset[position].someText
+        holder.imageView?.setImageResource(dataset[position].image)
     }
-    fun clickOnItem(position: Int){}
+
 }

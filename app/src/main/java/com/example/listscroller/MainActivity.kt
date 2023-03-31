@@ -13,6 +13,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity :AppCompatActivity(),DetailsItem{
     private val data= mutableListOf<Affirmation>()
+    private  val imageList= mutableListOf<Int>(R.drawable.image1,
+        R.drawable.image2,
+        R.drawable.image3,
+        R.drawable.image4,
+        R.drawable.image5
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,6 +33,12 @@ class MainActivity :AppCompatActivity(),DetailsItem{
     }
     private  fun addNewElem()
     {
+         val newImage= mutableListOf<Int>(R.drawable.image6,
+            R.drawable.image7,
+            R.drawable.image8,
+            R.drawable.image9,
+            R.drawable.image10
+        )
         val inflter = LayoutInflater.from(this)
         val v = inflter.inflate(R.layout.add_new_item,null)
         val userName = v.findViewById<EditText>(R.id.userName)
@@ -38,7 +50,7 @@ class MainActivity :AppCompatActivity(),DetailsItem{
                 dialog,_->
             val names = userName.text.toString()
             if(names.isNotEmpty()){
-            data.add(Affirmation(names))
+            data.add(Affirmation(names,newImage[(0..5).random()]))
             recyclerView.adapter=ItemAdapter(data,this)
             }
             dialog.dismiss()
@@ -55,9 +67,11 @@ class MainActivity :AppCompatActivity(),DetailsItem{
     private  fun setAffirmation()
     {
         val   string= resources.getStringArray(R.array.affirmation_array)
+        var count =0
          for (element in string)
          {
-             data.add(Affirmation(element))
+             data.add(Affirmation(element, imageList[count]))
+             count++
          }
 
     }
