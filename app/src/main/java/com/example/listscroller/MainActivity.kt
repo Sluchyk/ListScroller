@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity :AppCompatActivity(),DetailsItem{
     private val data= mutableListOf<Affirmation>()
-    private  val imageList= mutableListOf<Int>(R.drawable.image1,
+    private  val imageList= mutableListOf(R.drawable.image1,
         R.drawable.image2,
         R.drawable.image3,
         R.drawable.image4,
@@ -23,7 +23,7 @@ class MainActivity :AppCompatActivity(),DetailsItem{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val recyclerView:RecyclerView=findViewById(R.id.recycler_view)
-        val addButton:FloatingActionButton=findViewById(R.id.addingBtn)
+        val addButton:CustomFab=findViewById(R.id.custom_fab)
         setAffirmation()
         recyclerView.layoutManager = LinearLayoutManager(this)
        recyclerView.adapter=ItemAdapter(data,this)

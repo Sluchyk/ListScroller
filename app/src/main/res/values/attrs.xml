@@ -1,0 +1,7 @@
+<resources>
+    <declare-styleable name="CustomFab">
+        <attr name="customIcon" format="reference" />
+        <!-- Define more custom attributes for your FAB here -->
+        <!-- ... -->
+    </declare-styleable>
+</resources>
