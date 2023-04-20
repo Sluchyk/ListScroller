@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/teal_200"
+    android:padding="8dp"
+    android:gravity="center_horizontal">
+
+    <!-- Add your custom toolbar components here, such as a title, icons, etc. -->
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_home_24"
+        android:layout_marginRight="50dp"/>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_self_improvement_24"/>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_settings_24"
+        android:layout_marginLeft="50dp"/>
+
+
+</LinearLayout>
